@@ -4,7 +4,7 @@
 /* TRANSACTION이란?
  - 데이터베이스의 논리적 연산 단위
  
- - 데이터 변경 사항을 묶어 하나의 트랜잭션에 담아 처리함.
+ - 데이터 변경 사항(DML)을 묶어 하나의 트랜잭션에 담아 처리함.
 
  - 트랜잭션의 대상이 되는 데이터 변경 사항 : INSERT, UPDATE, DELETE (DML)
  
@@ -37,8 +37,8 @@
 -- DEPARTMENT2 테이블 복사 (DEPARTMENT3 생성)
 CREATE TABLE DEPARTMENT3 AS
 SELECT * FROM DEPARTMENT2;
-
-SELECT * FROM DEPARTMENT3;
+   
+SELECT * FROM DEPARTMENT3; 
 
 
 /* - INSERT INTO 테이블명 VALUES(값...)
@@ -53,20 +53,38 @@ SELECT * FROM DEPARTMENT3;
 
 
 -- 'D0', '경리부', 'L2' 삽입
+INSERT INTO DEPARTMENT3 
+VALUES('D0', '경리부', 'L2');
+
+SELECT * FROM DEPARTMENT3;
+--> INSERT한 내용을 COMMIT(DB 반영) 하지 않았어도
+--  SELECT 시 조회 결과에 INSERT 내용이 포함된다
 
 
 
 -- DEPARTMENT3 테이블
 -- DEPT_ID가 'D9'인 부서의 이름과 지역코드를
 -- '전략기획팀', 'L3' 로 수정.
+UPDATE DEPARTMENT3
+SET    DEPT_TITLE = '전략기획팀',
+       LOCATION_ID = 'L3'
+WHERE  DEPT_ID = 'D9';
+
+SELECT * FROM DEPARTMENT3;
+
+/* 트랜잭션에 저장된 내용(INSERT 1개, UPDATE 1개)을 삭제 */
+ROLLBACK;
+SELECT * FROM DEPARTMENT3;
 
 
 
 /* 현재 트랜잭션에 저장된 DML(INSERT, UPDATE) 구문을
  * 실제로 DB에 반영 -> COMMIT */
+COMMIT;
 
 
 /* 트랜잭션에 저장된 내용 삭제 -> ROLLBACK */
+ROLLBACK;
 
 
 -- (COMMIT, ROLLBACK 사이에 수행한 DML이 없으므로 변화 없음)
@@ -76,57 +94,77 @@ SELECT * FROM DEPARTMENT3;
 ----------------------------------------------------------------
 
 -- DEPT_ID 가 'D0'인 행을 삭제
-
+DELETE FROM DEPARTMENT3
+WHERE DEPT_ID = 'D0';
 
 
 -- DEPT_ID 가 'D9'인 행을 삭제
+DELETE FROM DEPARTMENT3
+WHERE DEPT_ID = 'D9';
 
-
-
+SELECT * FROM DEPARTMENT3;
 -- DEPT_ID 가 'D8'인 행을 삭제
+DELETE FROM DEPARTMENT3
+WHERE DEPT_ID = 'D8';
 
-
-
+SELECT * FROM DEPARTMENT3;
 
 
 /* 트랜잭션에 저장된 DML(DELETE 3번) 모두 삭제 */
+ROLLBACK;
 
-
-
+SELECT * FROM DEPARTMENT3;
 
 ----------------------------------------------------------------
 /* SAVEPOINT */
 
 -- DEPT_ID 가 'D0'인 행을 삭제
+DELETE FROM DEPARTMENT3
+WHERE DEPT_ID = 'D0';
 
-
--- SAVEPOINE "SP1" 저장 지점 설정
-
+-- SAVEPOINT "SP1" 저장 지점 설정
+SAVEPOINT "SP1";
 
 
 -- DEPT_ID 가 'D9'인 행을 삭제
+DELETE FROM DEPARTMENT3
+WHERE DEPT_ID = 'D9';
 
-
--- SAVEPOINE "SP2" 저장 지점 설정
-
+-- SAVEPOINT "SP2" 저장 지점 설정
+SAVEPOINT "SP2";
 
 -- DEPT_ID 가 'D8'인 행을 삭제
-
+DELETE FROM DEPARTMENT3
+WHERE DEPT_ID = 'D8';
 
 -- SAVEPOINE "SP3" 저장 지점 설정
-
+SAVEPOINT "SP3";
 
 -- DEPARTMENT3 전체 삭제
-
+DELETE
+FROM DEPARTMENT3;
 
 -- "SP3" 까지 롤백
+ROLLBACK TO "SP3";
 
+SELECT * FROM DEPARTMENT3;
+--> 전체 삭제 전으로 ROLLBACK
 
 -- "SP2" 까지 롤백
+ROLLBACK TO "SP2";
 
+SELECT * FROM DEPARTMENT3;
+--> D8 복구
 
 -- "SP1" 까지 롤백
+ROLLBACK TO "SP1";
+
+SELECT * FROM DEPARTMENT3;
+--> D9 복구
+
 
 -- 'D0' 도 복구 -> 그냥 ROLLBACK
+ROLLBACK;
 
-
+SELECT * FROM DEPARTMENT3;
+--> D0 복구
