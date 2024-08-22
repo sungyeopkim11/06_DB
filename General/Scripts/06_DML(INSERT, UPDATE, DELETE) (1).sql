@@ -418,3 +418,62 @@ SELECT * FROM EMPLOYEE3;
 ROLLBACK;
 -- 롤백 후 복구 확인 -> 복구 안됨을 확인!
 SELECT * FROM EMPLOYEE3;
+
+
+------------------------------------------------------------
+
+/* DML */
+
+-- ** INSERT **
+--> INSERT INTO 테이블명 VLAUES(컬럼에 들어갈 값)
+
+
+-- ** UPDATE : 테이블에서 지정된 행의 컬럼 값을 수정하는 구문
+--> UPDATE 테이블명 SET 컬럼명 = 수정할 값, 컬럼명 = 수정할 값 ...
+--  WHERE 행을 지정하는 조건;
+
+
+-- ** DELETE : 테이블의 행을 삭제하는 구문
+--> DELETE FROM 테이블명 WHERE 행을 지정하는 조건;
+
+-------------------------------------------------------------
+
+/* DML(Data Manipulation Language) : 데이터 조작 언어 */
+-- SELECT, INSERT, UPDATE, DELETE, MERGE
+
+-- DQL(Data Query Language) : 데이터 질의 언어
+-- SELECT
+
+
+/* TCL (Transaction Control Language) : 트랜잭션 제어 언어 
+ * - COMMIT, ROLLBACK
+ * 
+ * 
+ * DDL (Data Definition Language) : 데이터 정의 언어
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
