@@ -426,7 +426,7 @@ CREATE TABLE USER_USED_FK(
   PHONE VARCHAR2(30),
   EMAIL VARCHAR2(50),
   GRADE_CODE NUMBER -- 해당 컬럼에 작성될 수 있는 값은
-                    -- USER_GRADE 테이블의 PS컬럼값(GRADE_CODE)
+                    -- USER_GRADE 테이블의 PK컬럼값(GRADE_CODE)
                     -- PK컬럼 값(GRADE_CODE)만 작성하게 제한하고 싶다
                     --> FK 제약조건 설정
   /* 테이블 레벨 설정 */
