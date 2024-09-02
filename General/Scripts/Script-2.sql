@@ -109,7 +109,7 @@ FROM TB_USER
 WHERE USER_ID = 'user33';
 
 
-
+SELECT * FROM TB_USER;
 
 
 
