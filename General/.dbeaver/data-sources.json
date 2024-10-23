@@ -158,6 +158,90 @@
 				},
 				"auth-model": "oracle_native"
 			}
+		},
+		"oracle_thin-192b6f5009e-5896024f9145c701": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "RP_KSY(RP1234)",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "1521",
+				"database": "XE",
+				"url": "jdbc:oracle:thin:@//localhost:1521/XE",
+				"configurationType": "MANUAL",
+				"home": "C:\\app\\user1\\product\\18.0.0\\dbhomeXE",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SERVICE"
+				},
+				"auth-model": "oracle_native"
+			},
+			"filters": [
+				{
+					"type": "org.jkiss.dbeaver.ext.oracle.model.OracleSchema",
+					"enabled": true,
+					"include": ["RP_KSY"]
+				}
+			]
+		},
+		"oracle_thin-192b7c8cfbf-2f449b958c6d180e": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "PROJECT_KSY(PROJECT1234)",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "1521",
+				"database": "XE",
+				"url": "jdbc:oracle:thin:@//localhost:1521/XE",
+				"configurationType": "MANUAL",
+				"home": "C:\\app\\user1\\product\\18.0.0\\dbhomeXE",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SERVICE"
+				},
+				"auth-model": "oracle_native"
+			},
+			"filters": [
+				{
+					"type": "org.jkiss.dbeaver.ext.oracle.model.OracleSchema",
+					"enabled": true,
+					"include": ["PROJECT_KSY"]
+				}
+			]
+		},
+		"oracle_thin-192b8221c92-422f31391871b6cb": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "REPET_KSY(REPET1234)",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "1521",
+				"database": "XE",
+				"url": "jdbc:oracle:thin:@//localhost:1521/XE",
+				"configurationType": "MANUAL",
+				"home": "C:\\app\\user1\\product\\18.0.0\\dbhomeXE",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SERVICE"
+				},
+				"auth-model": "oracle_native"
+			},
+			"filters": [
+				{
+					"type": "org.jkiss.dbeaver.ext.oracle.model.OracleSchema",
+					"enabled": true,
+					"include": ["REPET_KSY"]
+				}
+			]
 		}
 	},
 	"virtual-models": {"oracle_thin-191de7a2870-681ea4b8f2788fef":{"SPRING_KSY":{"@properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202410011724\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"oracle_thin-191de7a2870-681ea4b8f2788fef\"\u003e\u003centity id\u003d\"1\" name\u003d\"BOARD\" fq-name\u003d\"SPRING_KSY.BOARD\" order\u003d\"0\" font\u003d\"Segoe UI:9:0\" x\u003d\"285\" y\u003d\"208\"\u003e\u003cpath name\u003d\"SPRING_KSY\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"BOARD_IMG\" fq-name\u003d\"SPRING_KSY.BOARD_IMG\" order\u003d\"1\" font\u003d\"Segoe UI:9:0\" x\u003d\"40\" y\u003d\"472\"\u003e\u003cpath name\u003d\"SPRING_KSY\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"3\" name\u003d\"BOARD_LIKE\" fq-name\u003d\"SPRING_KSY.BOARD_LIKE\" order\u003d\"2\" font\u003d\"Segoe UI:9:0\" x\u003d\"40\" y\u003d\"84\"\u003e\u003cpath name\u003d\"SPRING_KSY\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"4\" name\u003d\"BOARD_TYPE\" fq-name\u003d\"SPRING_KSY.BOARD_TYPE\" order\u003d\"3\" font\u003d\"Segoe UI:9:0\" x\u003d\"518\" y\u003d\"344\"\u003e\u003cpath name\u003d\"SPRING_KSY\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"5\" name\u003d\"COMMENT\" fq-name\u003d\"SPRING_KSY.\u0026quot;COMMENT\u0026quot;\" order\u003d\"4\" font\u003d\"Segoe UI:9:0\" x\u003d\"40\" y\u003d\"228\"\u003e\u003cpath name\u003d\"SPRING_KSY\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"6\" name\u003d\"MEMBER\" fq-name\u003d\"SPRING_KSY.\u0026quot;MEMBER\u0026quot;\" order\u003d\"5\" font\u003d\"Segoe UI:9:0\" x\u003d\"518\" y\u003d\"40\"\u003e\u003cpath name\u003d\"SPRING_KSY\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"7\" name\u003d\"TB_FILE_TEST\" fq-name\u003d\"SPRING_KSY.TB_FILE_TEST\" order\u003d\"6\" border-width\u003d\"3\" font\u003d\"Segoe UI:9:0\" x\u003d\"266\" y\u003d\"713\"\u003e\u003cpath name\u003d\"SPRING_KSY\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"FK_BOARD_TO_BOARD_IMG_1\" fq-name\u003d\"SPRING_KSY.BOARD_IMG.FK_BOARD_TO_BOARD_IMG_1\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"2\"/\u003e\u003crelation name\u003d\"FK_BOARD_TO_BOARD_LIKE_1\" fq-name\u003d\"SPRING_KSY.BOARD_LIKE.FK_BOARD_TO_BOARD_LIKE_1\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"3\"/\u003e\u003crelation name\u003d\"FK_BOARD_TO_COMMENT_1\" fq-name\u003d\"SPRING_KSY.\u0026quot;COMMENT\u0026quot;.FK_BOARD_TO_COMMENT_1\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"5\"/\u003e\u003crelation name\u003d\"FK_BOARD_TYPE_TO_BOARD_1\" fq-name\u003d\"SPRING_KSY.BOARD.FK_BOARD_TYPE_TO_BOARD_1\" type\u003d\"fk\" pk-ref\u003d\"4\" fk-ref\u003d\"1\"/\u003e\u003crelation name\u003d\"FK_COMMENT_TO_COMMENT_1\" fq-name\u003d\"SPRING_KSY.\u0026quot;COMMENT\u0026quot;.FK_COMMENT_TO_COMMENT_1\" type\u003d\"fk\" pk-ref\u003d\"5\" fk-ref\u003d\"5\"\u003e\u003cbend type\u003d\"rel\" x\u003d\"257\" y\u003d\"358\"/\u003e\u003cbend type\u003d\"rel\" x\u003d\"301\" y\u003d\"336\"/\u003e\u003cbend type\u003d\"rel\" x\u003d\"301\" y\u003d\"293\"/\u003e\u003cbend type\u003d\"rel\" x\u003d\"257\" y\u003d\"271\"/\u003e\u003c/relation\u003e\u003crelation name\u003d\"FK_MEMBER_TO_BOARD_1\" fq-name\u003d\"SPRING_KSY.BOARD.FK_MEMBER_TO_BOARD_1\" type\u003d\"fk\" pk-ref\u003d\"6\" fk-ref\u003d\"1\"/\u003e\u003crelation name\u003d\"FK_MEMBER_TO_BOARD_LIKE_1\" fq-name\u003d\"SPRING_KSY.BOARD_LIKE.FK_MEMBER_TO_BOARD_LIKE_1\" type\u003d\"fk\" pk-ref\u003d\"6\" fk-ref\u003d\"3\"/\u003e\u003crelation name\u003d\"FK_MEMBER_TO_COMMENT_1\" fq-name\u003d\"SPRING_KSY.\u0026quot;COMMENT\u0026quot;.FK_MEMBER_TO_COMMENT_1\" type\u003d\"fk\" pk-ref\u003d\"6\" fk-ref\u003d\"5\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}}}}},
